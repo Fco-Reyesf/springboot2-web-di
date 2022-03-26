@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.proyecto.springboot.di.app.models.service.service;
+import com.proyecto.springboot.di.app.models.service.IService;
 
 /*
  * DAO : data access object. accede a datos realizando consultas.
@@ -16,9 +16,9 @@ import com.proyecto.springboot.di.app.models.service.service;
 @Controller
 public class indexController {
 	
-	// crea la inyeccion
+	// crea la inyeccion 
 	@Autowired
-	private service servicio;
+	private IService servicio;
 	
 	@GetMapping({"","/","/index"})
 	public String index(Model modelo) {
