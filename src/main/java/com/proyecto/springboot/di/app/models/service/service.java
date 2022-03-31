@@ -5,9 +5,10 @@ import org.springframework.stereotype.Component;
 /*
  * en caso de 2 que dos clases implementen el mismo servicio:
  * @primary la clase que contenga la sentencia indicada, sera tomada en cuenta en primer lugar
+ * component es igual a bean pero se implementa de forma diferente.
  */
 
-@Component
+//@Component
 public class service implements IService {
 
 	 /*
