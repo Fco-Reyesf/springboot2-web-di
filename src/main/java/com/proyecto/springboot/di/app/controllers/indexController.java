@@ -23,6 +23,9 @@ public class indexController {
 	 * @autowired crea la inyeccion
 	 * puede colocarse en la instancia del servicio o en los set o get
 	 * pero solo puede ser en uno solo
+	 * 
+	 * con @qualifier("nombre-component") indica el servicio de preferencia
+	 * que utiliza la interfaz
 	 */
 	
 	@Autowired    // opcion 1

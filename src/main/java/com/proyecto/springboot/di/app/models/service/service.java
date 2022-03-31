@@ -2,6 +2,11 @@ package com.proyecto.springboot.di.app.models.service;
 
 import org.springframework.stereotype.Component;
 
+/*
+ * en caso de 2 que dos clases implementen el mismo servicio:
+ * @primary la clase que contenga la sentencia indicada, sera tomada en cuenta en primer lugar
+ */
+
 @Component
 public class service implements IService {
 
