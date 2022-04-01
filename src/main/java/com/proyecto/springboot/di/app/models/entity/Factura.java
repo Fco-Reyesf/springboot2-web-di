@@ -30,7 +30,7 @@ public class Factura {
 		descripcion = descripcion.concat(" con el post");
 	}
 	
-	@PreDestroy
+	@PreDestroy			// al momento de ser destruido el bean ejecuta la accion.
 	public void preCliente() {
 		System.out.println("factura destruida");
 	}
