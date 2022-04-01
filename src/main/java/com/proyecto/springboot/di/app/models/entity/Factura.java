@@ -2,7 +2,11 @@ package com.proyecto.springboot.di.app.models.entity;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +20,20 @@ public class Factura {
 	private Cliente cliente;
 	
 	@Autowired
+	@Qualifier("itemsFacturaNuevo")   // indica que bean utiliza para inyectar los datos
 	private List<ItemFactura> items;
+	
+	@PostConstruct			// despues de realizar la inyeccion de datos, hacer la siguiente accion
+	public void postCliente() {
+		cliente.setNombre("nombrePost");
+		cliente.setApellido("apellidoPost");
+		descripcion = descripcion.concat(" con el post");
+	}
+	
+	@PreDestroy
+	public void preCliente() {
+		System.out.println("factura destruida");
+	}
 	
 	public String getDescripcion() {
 		return descripcion;

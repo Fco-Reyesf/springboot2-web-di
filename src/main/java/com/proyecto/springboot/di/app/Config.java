@@ -19,6 +19,7 @@ public class Config {
 		return new service();
 	}
 	
+	// componentes para inyectar en itemFactura.
 	@Bean("itemsFactura")
 	public List<ItemFactura> registarItems(){
 		Producto producto1 = new Producto("producto1", 100);
@@ -30,4 +31,18 @@ public class Config {
 		return Arrays.asList(linea1,linea2);
 	}
 	
+	@Bean("itemsFacturaNuevo")
+	public List<ItemFactura> registarItemsNuevo(){
+		Producto producto1 = new Producto("productoNuevo1", 100);
+		Producto producto2 = new Producto("productoNuevo2", 600);
+		Producto producto3 = new Producto("productoNuevo3", 10);
+		Producto producto4 = new Producto("productoNuevo4", 60);
+		
+		ItemFactura linea1 = new ItemFactura(producto1, 2);
+		ItemFactura linea2 = new ItemFactura(producto2, 1);
+		ItemFactura linea3 = new ItemFactura(producto3, 1);
+		ItemFactura linea4 = new ItemFactura(producto4, 1);
+		
+		return Arrays.asList(linea1,linea2,linea3,linea4);
+	}
 }
